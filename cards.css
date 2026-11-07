@@ -1,0 +1,603 @@
+/* cards.css - tutorials page, practice page and about page
+   (same glass look as the footer card, nothing from the other stylesheets is changed) */
+
+
+/* heading on top of these pages, same idea as the contact page */
+.hub-title .letstalk{
+    font-size: 4rem;
+}
+@media (max-width: 1399.98px){ .hub-title .letstalk{ font-size: 3.75rem; } }
+@media (max-width: 1199.98px){ .hub-title .letstalk{ font-size: 3.25rem; } }
+@media (max-width: 991.98px){ .hub-title .letstalk{ font-size: 3rem; } }
+@media (max-width: 575.98px){
+    .hub-title .learncode,
+    .hub-title .letstalk{
+        font-size: 2.3rem;
+    }
+}
+
+
+/* glass card base, same as .cardleft2 in the footer */
+.course-card,
+.practice-card,
+.about-card{
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: #5e5e8f4c;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #f3f4fb;
+}
+
+/* no radio is checked on the about page, so hide the glider instead of leaving it on Home */
+.radio-pill:not(:has(input:checked)) .glider{
+    opacity: 0;
+}
+
+/* small pill with a coloured dot (same dots as the HTML CSS Python pills) */
+.course-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 16px;
+    border-radius: 100vw;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.course-tag::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.tag-html::before{ background: #F97316; }
+.tag-css::before {
+    background: #0058dc;}
+.tag-py::before{ background: #22C55E; }
+
+.commingsoon::before{
+    background: #8695ac !important;
+
+}
+
+
+
+/* ========== tutorials page ========== */
+
+.course-row{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.course-card{
+    display: flex;
+    flex-direction: column;
+    padding: 34px 34px 36px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.course-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.course-top{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin-bottom: 18px;
+}
+.course-count{
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #a9b8c7;
+}
+
+.course-name{
+    margin: 0 0 10px;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #f3f4fb;
+}
+.course-text{
+    margin: 0 0 24px;
+    line-height: 1.7;
+    color: #a9b8c7;
+}
+.course-text code{
+    padding: 2px 7px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ff8a73;
+    font-size: 0.9em;
+}
+
+/* lesson links inside the card */
+.course-lessons{
+    display: grid;
+    gap: 10px;
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+}
+.course-lessons li a{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f3f4fb;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 250ms;
+}
+.course-lessons li a:hover{
+    background: rgba(255, 255, 255, 0.12);
+    color: #f3f4fb;
+    text-decoration: none;
+    transform: translateX(4px);
+}
+.course-num{
+    flex: 0 0 28px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #FF7A5A, #FF4784);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* button row at the bottom, pushes itself down so both cards line up */
+.course-go{
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+.course-go .glass-pill2{
+    margin-top: 0;
+}
+.course-go .glass-pill2:hover{
+    color: #ffffff;
+}
+
+/* html css card, lessons are not ready yet */
+.course-soonline{
+    margin: 0 0 30px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    color: #a9b8c7;
+    line-height: 1.6;
+}
+.course-soon{
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 26px;
+    border-radius: 100vw;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #c3c7ee;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: default;
+}
+.course-soon:hover{
+    color: #c3c7ee;
+    text-decoration: none;
+}
+
+
+
+/* ========== practice page ========== */
+
+.practice-row{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 100px;
+}
+
+.practice-card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 26px 28px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* soft glow in the corner, the colour is different for every card */
+.practice-card::before{
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+.practice-card > *{
+    position: relative;
+}
+.practice-card .course-tag{
+    align-self: flex-start;
+}
+.pc-html::before{ background: #F97316; }
+.pc-css::before{ background: #3B82F6; }
+.pc-py::before{ background: #22C55E; }
+
+.practice-card:hover{ transform: translateY(-8px); }
+.pc-html:hover, .pc-html.is-active{ border-color: rgba(249, 115, 22, 0.75); }
+.pc-css:hover,  .pc-css.is-active{ border-color: rgba(59, 130, 246, 0.75); }
+.pc-py:hover,   .pc-py.is-active{ border-color: rgba(34, 197, 94, 0.75); }
+.practice-card.is-active{ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }
+
+.pc-title{
+    margin: 16px 0 8px;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #f3f4fb;
+}
+.pc-text{
+    margin: 0 0 20px;
+    line-height: 1.65;
+    font-size: 0.95rem;
+    color: #a9b8c7;
+}
+
+/* little code preview, every card has its own version */
+.pc-code{
+    margin: 0 0 12px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    border-radius: 16px;
+    background: rgba(8, 8, 30, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e9ebff;
+    font: 400 0.82rem/1.75 "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+.pc-code::before{
+    content: attr(data-file);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: #8396ad;
+}
+.pc-code code{
+    font: inherit;
+    color: inherit;
+    background: none;
+    padding: 0;
+}
+.pc-code .k{ color: #ff9d57; }   /* html tags */
+.pc-code .p{ color: #7fb2ff; }   /* css property */
+.pc-code .v{ color: #8fe3b0; }   /* values and strings */
+.pc-code .g{ color: #4ade80; }   /* python prompt */
+.pc-code .m{ color: #8396ad; }   /* muted */
+
+/* python one looks like a terminal */
+.pc-py .pc-code{
+    background: #070b18;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+.pc-py .pc-code::before{
+    content: "● ● ●   python";
+    letter-spacing: 0.12em;
+}
+
+.pc-go{
+    margin-top: auto;
+    align-self: flex-start;
+    height: 48px;
+    padding: 0 26px;
+    border: 0;
+    border-radius: 100vw;
+    color: #ffffff;
+    font: 700 0.95rem "Plus Jakarta Sans", sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 280ms;
+}
+.pc-go:hover{ transform: scale(1.06); }
+.pc-go:focus-visible{ outline: 2px solid #a5adff; outline-offset: 3px; }
+.pc-html .pc-go{ background-image: linear-gradient(to right, #fb923c, #ea580c); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35); }
+.pc-css .pc-go{    background-image: linear-gradient(to right, #3232e2, #608fdc);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);}
+    .pc-css .COMGBTN{ background-image: linear-gradient(to right, #2b2b3a, #75787d)!important;
+        box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35)!important;
+    
+    }
+.pc-py .pc-go{   background-image: linear-gradient(to right, #22c55e, #15803d); box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35); }
+
+.pr-hint{
+    margin: 40px 0 0;
+    text-align: center;
+    color: #a9b8c7;
+}
+
+/* editor that opens under the cards */
+#editor{
+    margin-top: 70px;
+}
+.pr-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 24px;
+    margin-bottom: 20px;
+}
+.pr-now{
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #f3f4fb;
+}
+.pr-task{
+    flex: 1 1 280px;
+    margin: 0;
+    line-height: 1.6;
+    color: #a9b8c7;
+}
+.pr-reset{
+    margin-left: auto;
+    padding: 8px 18px;
+    border-radius: 100vw;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f3f4fb;
+    font: 600 0.85rem "Plus Jakarta Sans", sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.pr-reset:hover{ transform: translateY(-2px); }
+.pr-reset:focus-visible{ outline: 2px solid #a5adff; outline-offset: 2px; }
+
+
+
+/* ========== about page ========== */
+
+.about-row{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 100px;
+}
+.about-row.two{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+}
+
+.about-card{
+    padding: 30px 30px 32px;
+}
+.about-icon{
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #FF785B;
+}
+.about-icon svg{
+    width: 24px;
+    height: 24px;
+}
+.about-card h2{
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #f3f4fb;
+}
+.about-card p{
+    margin: 0;
+    line-height: 1.7;
+    color: #a9b8c7;
+}
+
+/* what you can learn list */
+.about-langs{
+    display: grid;
+    gap: 16px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.about-langs li{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.6;
+    color: #a9b8c7;
+}
+.about-langs .course-tag{
+    flex: 0 0 auto;
+    min-width: 96px;
+    color: #f3f4fb;
+}
+
+/* buttons at the bottom of the about cards */
+.about-go{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px;
+    margin-top: 26px;
+}
+.about-go .glass-pill2{
+    margin-top: 0;
+}
+.about-go .glass-pill2:hover{
+    color: #ffffff;
+}
+.about-link {
+    color: #e0d1ce;
+    font-weight: 600;}
+.about-link:hover{
+    color: #f9f7f6;
+    text-decoration: underline;
+    text-decoration-color: #ea5600;
+}
+
+
+
+/* ========== responsive ========== */
+
+@media (max-width: 991.98px){
+    .practice-row,
+    .about-row{
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 80px;
+    }
+    .about-row.two{
+        margin-top: 28px;
+    }
+}
+@media (max-width: 767.98px){
+    .course-row{
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 80px;
+    }
+    .about-row.two{
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+@media (max-width: 575.98px){
+    .course-card{ padding: 26px 22px 28px; }
+    .about-card{ padding: 26px 22px 28px; }
+    .pr-reset{ margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce){
+    .course-card, .practice-card, .pc-go, .pr-reset{ transition: none; }
+}
+
+
+
+/* ========== light mode ========== */
+/* theme.js sets data-theme on <html>, same trick as theme.css */
+
+html[data-theme="light"] .course-card,
+html[data-theme="light"] .practice-card,
+html[data-theme="light"] .about-card{
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 60px rgba(110, 110, 190, 0.18);
+    color: #23254a;
+}
+html[data-theme="light"] .course-card:hover{ border-color: #ffffff; }
+
+html[data-theme="light"] .course-tag{
+    background: rgba(20, 20, 60, 0.06);
+    border-color: rgba(20, 20, 60, 0.12);
+    color: #0a0a22;
+}
+html[data-theme="light"] .course-count,
+html[data-theme="light"] .course-text,
+html[data-theme="light"] .pc-text,
+html[data-theme="light"] .pr-task,
+html[data-theme="light"] .pr-hint,
+html[data-theme="light"] .about-card p,
+html[data-theme="light"] .about-langs li{
+    color: #4b4e78;
+}
+html[data-theme="light"] .course-name,
+html[data-theme="light"] .pc-title,
+html[data-theme="light"] .pr-now,
+html[data-theme="light"] .about-card h2,
+html[data-theme="light"] .about-langs .course-tag{
+    color: #0a0a22;
+}
+html[data-theme="light"] .course-text code{
+    background: rgba(20, 20, 60, 0.06);
+    color: #d6452a;
+}
+
+html[data-theme="light"] .course-lessons li a{
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(20, 20, 60, 0.08);
+    color: #0a0a22;
+}
+html[data-theme="light"] .course-lessons li a:hover{
+    background: #ffffff;
+    color: #0a0a22;
+}
+html[data-theme="light"] .course-soonline{
+    border-color: rgba(20, 20, 60, 0.2);
+    color: #4b4e78;
+}
+html[data-theme="light"] .course-soon{
+    background: rgba(20, 20, 60, 0.06);
+    border-color: rgba(20, 20, 60, 0.12);
+    color: #4b4e78;
+}
+html[data-theme="light"] .course-soon:hover{ color: #4b4e78; }
+
+html[data-theme="light"] .pc-code{
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(20, 20, 60, 0.08);
+    color: #1d1f45;
+}
+html[data-theme="light"] .pc-code::before{ color: #7b7fa3; }
+html[data-theme="light"] .pc-code .k{ color: #c2410c; }
+html[data-theme="light"] .pc-code .p{ color: #1d4ed8; }
+html[data-theme="light"] .pc-code .v{ color: #1a7f4b; }
+html[data-theme="light"] .pc-code .g{ color: #15803d; }
+html[data-theme="light"] .pc-code .m{ color: #7b7fa3; }
+/* the terminal stays dark in light mode too, like a real terminal */
+html[data-theme="light"] .pc-py .pc-code{
+    background: #0b1020;
+    border-color: rgba(34, 197, 94, 0.35);
+    color: #e9ebff;
+}
+html[data-theme="light"] .pc-py .pc-code::before{ color: #8396ad; }
+html[data-theme="light"] .pc-py .pc-code .g{ color: #4ade80; }
+html[data-theme="light"] .pc-py .pc-code .v{ color: #8fe3b0; }
+html[data-theme="light"] .pc-py .pc-code .m{ color: #8396ad; }
+
+html[data-theme="light"] .practice-card.is-active{ box-shadow: 0 20px 50px rgba(110, 110, 190, 0.3); }
+html[data-theme="light"] .pr-reset{
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(20, 20, 60, 0.12);
+    color: #0a0a22;
+}
+
+html[data-theme="light"] .about-icon{
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(20, 20, 60, 0.1);
+}
+
+
+
+
+/* Force-hides Netlify's injected layout elements */
+div[class*="netlify"], 
+iframe[src*="netlify"],
+#netlify-badge-outer,
+.netlify-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    height: 0 !important;
+    width: 0 !important;
+}

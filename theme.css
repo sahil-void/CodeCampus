@@ -1,0 +1,274 @@
+/* ==========================================================================
+   theme.css - light / dark switch for Code Campus
+   Load AFTER every other stylesheet (it is the last <link> in <head>).
+   Nothing in your existing CSS files is changed; this file only adds rules
+   keyed to <html data-theme="light|dark"> which theme.js sets.
+   ========================================================================== */
+
+/* ---------- 1. which template is visible ---------- */
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"]  { color-scheme: dark; }
+
+/* No-JavaScript fallback: keep the site readable in its dark default theme. */
+html:not([data-theme]) {
+    color-scheme: dark;
+    background-color: #0a0a22;
+}
+html:not([data-theme]) body {
+    min-height: 100vh;
+    background-color: #0a0a22;
+    background-image:
+        radial-gradient(ellipse 38% 70% at 10% 16%, rgba(255, 90, 60, 0.55) 0%, rgba(255, 90, 60, 0.34) 38%, rgba(255, 90, 60, 0.10) 65%, transparent 90%),
+        radial-gradient(ellipse 40% 75% at 91% 49%, rgba(91, 91, 240, 0.55) 0%, rgba(91, 91, 240, 0.34) 40%, rgba(91, 91, 240, 0.10) 68%, transparent 92%),
+        radial-gradient(ellipse 30% 55% at 48% 96%, rgba(6, 182, 212, 0.40) 0%, rgba(6, 182, 212, 0.24) 40%, rgba(6, 182, 212, 0.08) 68%, transparent 92%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* light theme: index shows its light template, every other page shows its
+   (only) template re-skinned as light below */
+html[data-theme="light"] .my-custom-light-template { display: block; }
+html[data-theme="light"] .my-custom-dark-template  { display: block; }
+html[data-theme="light"] .my-custom-light-template ~ .my-custom-dark-template { display: none; }
+
+html[data-theme="dark"] .my-custom-light-template { display: none; }
+html[data-theme="dark"] .my-custom-dark-template  { display: block; }
+
+/* ---------- 2. page background (same gradients as style_1.css) ---------- */
+html[data-theme="light"] { background-color: #f5f2ff; }
+html[data-theme="light"] body {
+    min-height: 100vh;
+    background-color: #f5f2ff;
+    background-image:
+        radial-gradient(ellipse at 8% 8%,  rgba(255, 145, 130, 0.48) 0%, transparent 38%),
+        radial-gradient(ellipse at 95% 45%, rgba(135, 143, 255, 0.40) 0%, transparent 43%),
+        linear-gradient(110deg, #f8e5e8 0%, #f3f2ff 48%, #d1d2ff 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+html[data-theme="dark"] { background-color: #0a0a22; }
+html[data-theme="dark"] body {
+    min-height: 100vh;
+    background-color: #0a0a22;
+    background-image:
+        radial-gradient(ellipse 38% 70% at 10% 16%, rgba(255, 90, 60, 0.55) 0%, rgba(255, 90, 60, 0.34) 38%, rgba(255, 90, 60, 0.10) 65%, transparent 90%),
+        radial-gradient(ellipse 40% 75% at 91% 49%, rgba(91, 91, 240, 0.55) 0%, rgba(91, 91, 240, 0.34) 40%, rgba(91, 91, 240, 0.10) 68%, transparent 92%),
+        radial-gradient(ellipse 30% 55% at 48% 96%, rgba(6, 182, 212, 0.40) 0%, rgba(6, 182, 212, 0.24) 40%, rgba(6, 182, 212, 0.08) 68%, transparent 92%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* the dark template, when shown as the LIGHT version (every page except index) */
+html[data-theme="light"] .my-custom-dark-template {
+    background-color: #f5f2ff;
+    background-image:
+        radial-gradient(ellipse at 8% 8%,  rgba(255, 145, 130, 0.48) 0%, transparent 38%),
+        radial-gradient(ellipse at 95% 45%, rgba(135, 143, 255, 0.40) 0%, transparent 43%),
+        linear-gradient(110deg, #f8e5e8 0%, #f3f2ff 48%, #d1d2ff 100%);
+}
+
+/* ---------- 3. base text colours (so they never depend on the OS setting) ---------- */
+html[data-theme="light"] .my-custom-light-template,
+html[data-theme="light"] .my-custom-dark-template,
+html[data-theme="light"] .my-custom-dark-template ~ div { color: #0a0a22; }
+html[data-theme="light"] .h1 { color: #0a0a22; }
+
+html[data-theme="dark"] .my-custom-dark-template,
+html[data-theme="dark"] .my-custom-dark-template ~ div { color: #f3f4fb; }
+html[data-theme="dark"] .h1 { color: #f3f4fb; }
+
+/* ---------- 4. navbar / pills (same values as the "light mode text fix" in style_1.css) ---------- */
+html[data-theme="light"] { --text-color: #000000; --active-color: #000000; }
+html[data-theme="dark"]  { --text-color: #c3c7ee; --active-color: #ffffff; }
+
+html[data-theme="light"] .hamburger span { background: #000000; }
+html[data-theme="dark"]  .hamburger span { background: #ffffff; }
+
+html[data-theme="light"] .glass-pill { color: #000000; }
+html[data-theme="dark"]  .glass-pill:not(.codepill) { color: #ffffff; }
+
+html[data-theme="light"] .logotxt { color: #0a0a22; }
+
+/* ---------- 5. theme toggle button ---------- */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    cursor: pointer;
+    color: var(--active-color);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        0 8px 24px rgba(0, 0, 0, 0.20);
+    transition: transform 0.25s ease;
+}
+.theme-toggle:hover { transform: scale(1.08); }
+.theme-toggle:focus-visible { outline: 2px solid #a5adff; outline-offset: 3px; }
+.theme-toggle svg { width: 20px; height: 20px; display: block; }
+
+/* dark theme shows the sun (click = go light), light theme shows the moon */
+html[data-theme="dark"]  .theme-toggle .icon-moon { display: none; }
+html[data-theme="light"] .theme-toggle .icon-sun  { display: none; }
+html:not([data-theme]) .theme-toggle { display: none; }
+
+/* phone / tablet: directly UNDER the hamburger */
+.nav-mobile .theme-toggle {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav-mobile .theme-toggle:hover { transform: translateX(-50%) scale(1.08); }
+/* hide it while the menu is open so it doesn't sit behind the dropdown */
+.nav-mobile .menu-toggle:checked ~ .theme-toggle { visibility: hidden; }
+
+/* desktop: hamburger is hidden, so the button sits just left of "Login" */
+.theme-toggle--desktop { display: none; }
+@media (min-width: 1024.02px) {
+    .row.h-100 > .col-1 { position: relative; }
+    .theme-toggle--desktop {
+        display: inline-flex;
+        position: absolute;
+        z-index: 5;
+        top: 40px;
+        left: -2px;
+    }
+    html:not([data-theme]) .theme-toggle--desktop { display: none; }
+}
+
+/* ---------- 6. footer (light) ---------- */
+html[data-theme="light"] .cardleft2 {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border-color: rgba(255, 255, 255, 0.9) !important;
+    --bs-card-border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 60px rgba(110, 110, 190, 0.18);
+    color: #23254a;
+}
+html[data-theme="light"] .plus-jakarta-sans-footer { color: #23254a; font-weight: 400; }
+
+html[data-theme="light"] .plus-jakarta-sans-footer.colfooter {
+    color: #6b6d8a;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+}
+html[data-theme="light"] .colfooter .row { font-size: 1rem; letter-spacing: 0; font-weight: 400; }
+html[data-theme="light"] .colfooter a { color: #2a2c55 !important; }
+html[data-theme="light"] .colfooter a:hover { color: #000000 !important; }
+html[data-theme="light"] .colfooter u { color: #0a0a22; text-decoration-color: #F97316; }
+
+html[data-theme="light"] .codefooter { color: #0a0a22; font-weight: 600; }
+html[data-theme="light"] .campusfooter.plus-jakarta-sans-footer { color: #d9820b; font-weight: 600; }
+
+/* big "Code Campus" watermark: only the image changes, background-clip:text is kept */
+html[data-theme="light"] .plus-jakarta-sans-8 {
+    background-image: linear-gradient(to bottom, rgba(20, 20, 60, 0.16), rgba(20, 20, 60, 0.02));
+}
+
+/* social icons carry an inline colour, hence !important */
+html[data-theme="light"] .cardleft2 a[aria-label] { color: #2a2c55 !important; }
+
+/* ---------- 7. hero text on the (re-skinned) dark template ---------- */
+html[data-theme="light"] .plus-jakarta-sans-3 { color: #2a2c55; }
+
+/* ---------- 8. contact form (light) ---------- */
+html[data-theme="light"] .cardleft {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border-color: rgba(255, 255, 255, 0.9) !important;
+    --bs-card-border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 60px rgba(110, 110, 190, 0.16);
+    color: #23254a;
+}
+html[data-theme="light"] .plus-jakarta-sans-7 { color: #2a2c55; font-weight: 400; }
+html[data-theme="light"] .form-label.plus-jakarta-sans-7,
+html[data-theme="light"] .form-label-caps.plus-jakarta-sans-7 {
+    color: #2a2c55;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+html[data-theme="light"] .form-control {
+    color: #0a0a22;
+    border: 1px solid rgba(20, 20, 60, 0.10);
+}
+html[data-theme="light"] .form-control.bg-transparent { background-color: rgba(255, 255, 255, 0.92) !important; }
+html[data-theme="light"] .form-control::placeholder { color: #7b7fa3; opacity: 1; }
+html[data-theme="light"] .form-control:hover { border-color: rgba(20, 20, 60, 0.25); }
+html[data-theme="light"] .form-control:focus {
+    color: #0a0a22;
+    border-color: #7c83ff;
+    box-shadow: 0 0 0 4px rgba(124, 131, 255, 0.25);
+}
+
+/* unselected pills only - the selected (gradient) pill keeps its own rule */
+html[data-theme="light"] .custom-radio-pill:not(:checked) + .custom-pill-label {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid rgba(20, 20, 60, 0.08) !important;
+    color: #2a2c55 !important;
+}
+html[data-theme="light"] .custom-radio-pill:not(:checked) + .custom-pill-label:hover {
+    border-color: rgba(20, 20, 60, 0.28) !important;
+    color: #000000 !important;
+}
+
+/* ---------- 9. compiler window on tutorials (light) ---------- */
+html[data-theme="light"] .compiler-glass {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 25px 50px rgba(110, 110, 190, 0.22);
+}
+html[data-theme="light"] .compiler-title { color: #3a3c66; }
+
+/* ---------- 10. login form (login.css was not available - styled by class name) ---------- */
+html[data-theme="light"] .txf-form-wrapper {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 60px rgba(110, 110, 190, 0.16);
+    color: #23254a;
+}
+html[data-theme="light"] .txf-form-heading { color: #0a0a22; }
+html[data-theme="light"] .txf-form-subheading { color: #4b4e78; }
+html[data-theme="light"] .txf-field-label { color: #23254a; }
+html[data-theme="light"] .txf-field-input {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0a0a22;
+    border-color: rgba(20, 20, 60, 0.12);
+}
+html[data-theme="light"] .txf-field-input::placeholder { color: #7b7fa3; }
+
+
+/* Force-hides Netlify's injected layout elements */
+div[class*="netlify"], 
+iframe[src*="netlify"],
+#netlify-badge-outer,
+.netlify-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+

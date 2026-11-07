@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy: frame-src 'self' https://onecompiler.com; child-src 'self' https://onecompiler.com;

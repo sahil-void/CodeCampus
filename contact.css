@@ -1,0 +1,191 @@
+
+/* paragraph txt */
+.para{
+    margin-bottom: 0px !important;
+}
+
+.rowmain{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    
+    
+}
+
+.cardleft{
+    border-radius: 30px;
+   
+    border-color:#464661 ;
+}
+
+.plus-jakarta-sans-7 {
+   
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: clamp(0.875rem, 1.25vw + 0.5rem, 1rem);
+    color: #9bb1c8;
+  
+   
+    white-space: normal; 
+    word-break: break-word;
+  
+  }
+  /* 1. Default text size for desktops and large displays */
+.font-responsive-textct {
+  font-size: 4rem; /* Equivalent to fs-4 */
+}
+
+/* 2. Overrides applied strictly to Mobile/XS screens (below 576px wide) */
+@media (max-width: 575.98px) {
+  .font-responsive-textct {
+    font-size: 2.875rem ; /* Forces smaller text on phone screens */
+  }
+}
+
+
+/* From Uiverse.io  */ 
+/* =======================================================
+   CUSTOM PILL-SHAPED RADIO STATE RULES
+   ======================================================= */
+
+/* 1. Default Style for unselected pills */
+.custom-pill-label {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #a4a2c1 !important;
+    border-radius: 50px !important;
+    padding: 0.55rem 1.4rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+   
+   
+}
+/* did with doing research online  */
+input[type="radio"]{
+    display: none;
+    visibility: hidden;
+}
+
+/* Hover style for unselected options */
+.custom-pill-label:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* 2. Selection Mechanics: When the input is checked, morph the label style */
+.custom-radio-pill:checked + .custom-pill-label {
+    background: linear-gradient(to right, #ff7253, #ff4071) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    /* Soft neon illumination glow beneath the selected element */
+    box-shadow: 0 6px 20px rgba(255, 90, 100, 0.35) !important;
+}
+
+/* 3. Accessibility Focus state styling */
+.custom-radio-pill:focus-visible + .custom-pill-label {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px;
+}
+
+
+
+
+
+/* mesdg boxx */
+
+
+
+/* submit */
+
+.glass-pill3 {
+    
+    
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 24px;
+    
+   
+    border-radius: 100vw;
+    
+    
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent fill */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    
+  
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    color: rgb(255, 251, 251);
+    background-image: linear-gradient(to right, #FF7A5A, #FF4784);
+   
+    
+    /* texxt */
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 280ms;
+    letter-spacing: 1px;
+    
+    
+    
+  }
+  .glass-pill3 ul li{
+    margin-top: 20px;
+    list-style: none;
+    margin-right: 20px;
+  }
+
+.glass-pill3:hover{
+    transform: scale(1.1);
+    
+  }
+/* coloring card contact */
+.cardleft {
+    --bs-card-border-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* the input boxes and the message box */
+.form-control {
+    color: #fff;                                  /* typed text */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+}
+.form-control::placeholder { color: #9bb1c8; opacity: 1; }
+.form-control:hover { border-color: rgba(255, 255, 255, 0.4); }
+.form-control:focus {
+    background: transparent;
+    color: #fff;
+    border-color: #7c83ff;                        /* same indigo as your glow */
+    box-shadow: 0 0 0 4px rgba(124, 131, 255, 0.25);
+}
+/* }colorign ends */
+
+  .glass-contact { margin-top: 20px; }
+  
+
+
+
+  /* Force-hides Netlify's injected layout elements */
+div[class*="netlify"], 
+iframe[src*="netlify"],
+#netlify-badge-outer,
+.netlify-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    height: 0 !important;
+    width: 0 !important;
+}

@@ -1,0 +1,44 @@
+/* Run button in the compiler title bar - only shown when the embedded
+   editor has hidden its own Run button (narrow screens). */
+.compiler-run {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 6px 14px;
+    border: 0;
+    border-radius: 99px;
+    background: linear-gradient(to right, #ff7253, #ff4071);
+    color: #ffffff;
+    font: 700 0.8rem "Plus Jakarta Sans", system-ui, sans-serif;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 90, 100, 0.35);
+    transition: transform 0.2s ease;
+    z-index: 2; /* above the centred title */
+}
+.compiler-run:hover { transform: scale(1.06); }
+.compiler-run:focus-visible { outline: 2px solid #a5adff; outline-offset: 2px; }
+
+@media (max-width: 780px) {
+    .compiler-run { display: inline-flex; }
+}
+
+
+
+
+/* Force-hides Netlify's injected layout elements */
+div[class*="netlify"], 
+iframe[src*="netlify"],
+#netlify-badge-outer,
+.netlify-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    height: 0 !important;
+    width: 0 !important;
+}
