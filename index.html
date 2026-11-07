@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin" />
-    <title>Code Campuz</title>
-    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://onecompiler.com; child-src 'self' https://onecompiler.com;">
+    <title>Code Campus</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +24,7 @@
                         <div class="row flex-wrap h-100">
                             <div class="col-3 colum d-flex">
                                 <img class="responsive-img  d-flex  my-4"  src="./images/logo.svg" >
-                                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campuz</div>
+                                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campus</div>
 
                             </div>
 
@@ -147,7 +146,7 @@
           <div class="container"><div class="row">
               <div class="col-4">
 
-                  <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campuz</span></div>
+                  <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campus</span></div>
 
                   <div class="row plus-jakarta-sans-footer learnfooter">Learn to code, not just copy it.</div>
               </div>
@@ -171,7 +170,7 @@
               </div>
 
               <hr>
-              <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campuz. All rights reserved.</div>
+              <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campus. All rights reserved.</div>
               <div class="col-6"><div class="d-flex gap-5 justify-content-end ">
 
                   <!-- X (Twitter) -->     <!-- target blank for new tab online srarchinggg -->
@@ -202,7 +201,7 @@
                     </svg>
                   </a>
                 </div></div></div>
-                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campuz</div></div>
+                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campus</div></div>
 
           </div></div>
       </div> </div>
@@ -223,7 +222,7 @@
                 <div class="col-3 colum d-flex">
                     <a href="index.html"><img class="responsive-img  d-flex  my-4"  src="./images/logo.svg" >
                     </a>
-                    <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campuz</div>
+                    <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campus</div>
 
                 </div>
 
@@ -351,7 +350,7 @@
           <div class="container"><div class="row">
               <div class="col-4">
 
-                  <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campuz</span></div>
+                  <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campus</span></div>
 
                   <div class="row plus-jakarta-sans-footer learnfooter">Learn to code, not just copy it.</div>
               </div>
@@ -375,7 +374,7 @@
               </div>
 
               <hr>
-              <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campuz. All rights reserved.</div>
+              <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campus. All rights reserved.</div>
               <div class="col-6"><div class="d-flex gap-5 justify-content-end ">
 
                   <!-- X (Twitter) -->     <!-- target blank for new tab online srarchinggg -->
@@ -406,7 +405,7 @@
                     </svg>
                   </a>
                 </div></div></div>
-                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campuz</div></div>
+                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campus</div></div>
 
           </div></div>
       </div> </div>
@@ -423,33 +422,5 @@
 <script>
   AOS.init();
 </script>
-<script>
-    // Runs every 100ms to catch Netlify's badge as soon as it appears
-    const removeNetlifyBadge = setInterval(() => {
-      // 1. Check for standard container element
-      const badgeOuter = document.getElementById('netlify-badge-outer');
-      if (badgeOuter) {
-        badgeOuter.remove();
-        clearInterval(removeNetlifyBadge);
-        return;
-      }
-  
-      // 2. Fallback: Query all div containers to find Netlify's injected shadow host
-      const allDivs = document.querySelectorAll('div');
-      allDivs.forEach(div => {
-        if (div.shadowRoot) {
-          // Inspect the shadow root text content for Netlify signatures
-          if (div.shadowRoot.innerHTML.includes('netlify') || div.shadowRoot.innerHTML.includes('Powered by')) {
-            div.remove();
-            clearInterval(removeNetlifyBadge);
-          }
-        }
-      });
-    }, 100);
-  
-    // Safety stop after 5 seconds so the loop doesn't run forever
-    setTimeout(() => clearInterval(removeNetlifyBadge), 5000);
-  </script>
-  
 </body>
 </html>
