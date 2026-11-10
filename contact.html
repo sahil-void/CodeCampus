@@ -191,7 +191,7 @@
                                     placeholder="Write your message here..."
                                     style="height: 100px; resize: none;"
                                     required></textarea>
-                                <input type="text" id="website" form="contactForm" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+                                <input type="text" id="cc-trap-q7" form="contactForm" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
                                 <div class="form-field plus-jakarta-sans-7">
                                     Your message is sent to the Code Campuz team. We only use your details to reply to you.
                                 </div>
@@ -308,7 +308,7 @@
     sending = true;
 
     // Hidden spam-trap field: real people never fill it, bots often do.
-    if (document.getElementById("website").value) { done(); return; }
+    if (document.getElementById("cc-trap-q7").value) { done(); return; }
 
     var picked = document.querySelector('input[name="category"]:checked');
     var topicText = picked
