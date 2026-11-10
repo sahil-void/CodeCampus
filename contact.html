@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | Code Campuz</title>
+    <title>Code Campus | Contact</title>
     <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://onecompiler.com; child-src 'self' https://onecompiler.com;">
+    <link rel="icon" type="image/svg+xml" href="./images/logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +30,7 @@
             <div class="col-3 colum d-flex">
                 <a href="index.html"><img class="responsive-img  d-flex  my-4"  src="./images/logo.svg" >
                 </a>
-                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campuz</div>
+                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campus</div>
 
             </div>
 
@@ -190,8 +191,9 @@
                                     placeholder="Write your message here..."
                                     style="height: 100px; resize: none;"
                                     required></textarea>
+                                <input type="text" id="cc-trap-q7" form="contactForm" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
                                 <div class="form-field plus-jakarta-sans-7">
-                                    This demo checks the required fields in your browser. Your details are not sent or saved.
+                                    Your message is sent to the Code Campus team. We only use your details to reply to you.
                                 </div>
 
                                 <div class="col startlearn d-flex">
@@ -210,7 +212,7 @@
                     <div class="container"><div class="row">
                         <div class="col-4">
 
-                            <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campuz</span></div>
+                            <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campus</span></div>
 
                             <div class="row plus-jakarta-sans-footer learnfooter">Learn to code, not just copy it.</div>
                         </div>
@@ -218,23 +220,23 @@
                             <div class="row"><a href="./index.html">Home</a></div>
                             <div class="row"><a href="./tutorials.html">Tutorials</a></div>
                             <div class="row"><a href="./practice.html">Practice</a></div>
-                            <div class="row"><a href="">Courses</a></div>
+                            <div class="row"><a>Courses</a></div>
 
                         </div>
                         <div class="col colfooter plus-jakarta-sans-footer">LANGUAGES
-                            <div class="row "><a href="">HTML</a></div>
-                            <div class="row"><a href="">CSS</a></div>
-                            <div class="row"><a href="">Python</a></div>
+                            <div class="row "><a href="./html-css-1.html">HTML</a></div>
+                            <div class="row"><a href="./html-css-4.html">CSS</a></div>
+                            <div class="row"><a href="./tutorials-1.html">Python</a></div>
                         </div>
                         <div class="col colfooter company1 plus-jakarta-sans-footer">COMPANY
                             <div class="row"><a href="./about.html">About</a></div>
                             <div class="row"><a href="./contact.html"><u>Contact</u></a></div>
-                            <div class="row"><a href="">Privacy</a></div>
-                            <div class="row"><a href="">Terms</a></div>
+                            <div class="row"><a>Privacy</a></div>
+                            <div class="row"><a>Terms</a></div>
                         </div>
 
                         <hr>
-                        <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campuz. All rights reserved.</div>
+                        <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campus. All rights reserved.</div>
               <div class="col-6"><div class="d-flex gap-5 justify-content-end ">
 
                   <!-- X (Twitter) -->     <!-- target blank for new tab online srarchinggg -->
@@ -265,7 +267,7 @@
                     </svg>
                   </a>
                 </div></div></div>
-                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campuz</div></div>
+                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campus</div></div>
 
                     </div></div>
                 </div> </div>
@@ -283,6 +285,50 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+<script>
+(function () {
+  var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfUmZkyCyGhpcWsa8QmnkMx9wrXj4stpWzMIhZNTnUlGE0mgQ/formResponse";
+
+  var FIELDS = {
+    name:    "entry.2005620554",
+    email:   "entry.1045781291",
+    topic:   "entry.1101886894",
+    message: "entry.839337160"
+  };
+
+  var form = document.getElementById("contactForm");
+  var sending = false;
+
+  function done() { window.location.href = "./thank-you.html"; }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (sending) return;
+    sending = true;
+
+    // Hidden spam-trap field: real people never fill it, bots often do.
+    if (document.getElementById("cc-trap-q7").value) { done(); return; }
+
+    var picked = document.querySelector('input[name="category"]:checked');
+    var topicText = picked
+      ? document.querySelector('label[for="' + picked.id + '"]').textContent.trim()
+      : "General";
+
+    var data = new URLSearchParams();
+    data.append(FIELDS.name,    document.getElementById("name").value.trim());
+    data.append(FIELDS.email,   document.getElementById("email").value.trim());
+    data.append(FIELDS.topic,   topicText);
+    data.append(FIELDS.message, document.getElementById("mesg").value.trim());
+
+    fetch(FORM_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data
+    }).then(done).catch(done);
+  });
+})();
 </script>
 </body>
 </html>
