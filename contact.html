@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code Campus | Contact</title>
-    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://onecompiler.com https://docs.google.com; child-src 'self' https://onecompiler.com https://docs.google.com;">
-    <link rel="icon" type="image/svg+xml" href="./images/logo.svg">
+    <title>Contact | Code Campuz</title>
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://onecompiler.com; child-src 'self' https://onecompiler.com;">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +29,7 @@
             <div class="col-3 colum d-flex">
                 <a href="index.html"><img class="responsive-img  d-flex  my-4"  src="./images/logo.svg" >
                 </a>
-                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campus</div>
+                <div class="logotxt flex-nowrap plus-jakarta-sans-1 d-flex my-11 h3 " >Code</div>  <div class="logotxt2 plus-jakarta-sans-1 d-flex my-11  h3 " >Campuz</div>
 
             </div>
 
@@ -128,17 +127,81 @@
 
         </div>
 
-        <!-- Google Form embed -->
-        <style>
-          .cc-gform { max-width: 720px; margin: 40px auto 56px; padding: 20px; border-radius: 28px;
-            background: #5e5e8f4c; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); }
-          .cc-gform-title { margin: 4px 4px 14px; font-weight: 700; font-size: 1.25rem; }
-          .cc-gform iframe { display: block; width: 100%; height: 977px; border: 0; border-radius: 18px; background: #fff; }
-          @media (max-width: 600px) { .cc-gform { margin: 28px 16px 40px; padding: 12px; border-radius: 22px; } .cc-gform iframe { height: 1100px; } }
-        </style>
-        <div class="cc-gform" data-aos="fade-up" data-aos-duration="900">
-          <div class="cc-gform-title plus-jakarta-sans-7">Send us a message</div>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfUmZkyCyGhpcWsa8QmnkMx9wrXj4stpWzMIhZNTnUlGE0mgQ/viewform?embedded=true" title="Code Campus contact form" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="container  glass-contact" data-aos="fade-up" data-aos-duration="2400">
+            <div class="row rowmain">
+                <div class="col h-100">
+                    <div class="card cardleft 2   " style="background: #5c5c5d2c; backdrop-filter: blur(10px);">
+                        <div class="card-body">
+                            <div class="contact-form">
+                            <!-- Native form target. The visible fields below are associated with it using form="contactForm". -->
+                            <!-- The topic radio pills are deliberately outside this form, so no form values are submitted. -->
+                            <form id="contactForm" action="./thank-you.html" method="get"></form>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="name" class="form-label plus-jakarta-sans-7">NAME</label>
+                                        <input
+                                            class="form-control form-control-lg bg-transparent w-100 d-flex"
+                                            type="text"
+                                            id="name"
+                                            form="contactForm"
+                                            placeholder="your name"
+                                            autocomplete="name"
+                                            required data-aos="fade-right" data-aos-duration="900">
+                                        <div class="invalid-feedback">Name is required.</div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="email" class="form-label plus-jakarta-sans-7">EMAIL</label>
+                                        <input
+                                            class="form-control form-control-lg bg-transparent w-100 d-flex"
+                                            type="email"
+                                            id="email"
+                                            form="contactForm"
+                                            placeholder="you@example.com"
+                                            autocomplete="email"
+                                            required data-aos="fade-right" data-aos-duration="2000">
+                                        <div class="invalid-feedback">Enter a valid email address.</div>
+                                    </div>
+                                </div>
+
+                                <!-- From Uiverse.io -->
+                                <!-- Radio Pills Row Wrapper Container -->
+                                <div class="mb-4">
+                                    <label class="form-label-caps d-block mb-4 plus-jakarta-sans-7">What is this about?</label>
+                                    <div class="d-flex flex-wrap gap-4">
+                                        <input type="radio" class="btn-check custom-radio-pill" name="category" id="cat-general" value="general" checked>
+                                        <label class="btn custom-pill-label" for="cat-general">General</label>
+
+                                        <input type="radio" class="btn-check custom-radio-pill" name="category" id="cat-feedback" value="feedback">
+                                        <label class="btn custom-pill-label" for="cat-feedback">Feedback</label>
+
+                                        <input type="radio" class="btn-check custom-radio-pill" name="category" id="cat-bug" value="bug_report">
+                                        <label class="btn custom-pill-label" for="cat-bug">Bug report</label>
+
+                                        <input type="radio" class="btn-check custom-radio-pill" name="category" id="cat-partnership" value="partnership">
+                                        <label class="btn custom-pill-label" for="cat-partnership">Partnership</label>
+                                    </div>
+                                </div>
+
+                                <label for="mesg" class="form-label plus-jakarta-sans-7">Message</label>
+                                <textarea
+                                    class="form-control bg-transparent w-100"
+                                    id="mesg"
+                                    form="contactForm"
+                                    placeholder="Write your message here..."
+                                    style="height: 100px; resize: none;"
+                                    required></textarea>
+                                <div class="form-field plus-jakarta-sans-7">
+                                    This demo checks the required fields in your browser. Your details are not sent or saved.
+                                </div>
+
+                                <div class="col startlearn d-flex">
+                                    <button type="submit" form="contactForm" class="glass-pill3"><ul><li>Submit ➜</li></ul></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
                 <!-- footerr -->
@@ -147,7 +210,7 @@
                     <div class="container"><div class="row">
                         <div class="col-4">
 
-                            <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campus</span></div>
+                            <div class="imgfooter1"><img class=" imgfooter2" src="./images/logo.svg" alt="#"><span class="codefooter  ">Code</span><span class="campusfooter plus-jakarta-sans-footer">Campuz</span></div>
 
                             <div class="row plus-jakarta-sans-footer learnfooter">Learn to code, not just copy it.</div>
                         </div>
@@ -155,23 +218,23 @@
                             <div class="row"><a href="./index.html">Home</a></div>
                             <div class="row"><a href="./tutorials.html">Tutorials</a></div>
                             <div class="row"><a href="./practice.html">Practice</a></div>
-                            <div class="row"><a>Courses</a></div>
+                            <div class="row"><a href="">Courses</a></div>
 
                         </div>
                         <div class="col colfooter plus-jakarta-sans-footer">LANGUAGES
-                            <div class="row "><a href="./html-css-1.html">HTML</a></div>
-                            <div class="row"><a href="./html-css-4.html">CSS</a></div>
-                            <div class="row"><a href="./tutorials-1.html">Python</a></div>
+                            <div class="row "><a href="">HTML</a></div>
+                            <div class="row"><a href="">CSS</a></div>
+                            <div class="row"><a href="">Python</a></div>
                         </div>
                         <div class="col colfooter company1 plus-jakarta-sans-footer">COMPANY
                             <div class="row"><a href="./about.html">About</a></div>
                             <div class="row"><a href="./contact.html"><u>Contact</u></a></div>
-                            <div class="row"><a>Privacy</a></div>
-                            <div class="row"><a>Terms</a></div>
+                            <div class="row"><a href="">Privacy</a></div>
+                            <div class="row"><a href="">Terms</a></div>
                         </div>
 
                         <hr>
-                        <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campus. All rights reserved.</div>
+                        <div class="row"><div class="col-6 plus-jakarta-sans-footer">© 2026 Code Campuz. All rights reserved.</div>
               <div class="col-6"><div class="d-flex gap-5 justify-content-end ">
 
                   <!-- X (Twitter) -->     <!-- target blank for new tab online srarchinggg -->
@@ -202,7 +265,7 @@
                     </svg>
                   </a>
                 </div></div></div>
-                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campus</div></div>
+                <div class="row"><div class=" plus-jakarta-sans-8 ">Code Campuz</div></div>
 
                     </div></div>
                 </div> </div>
