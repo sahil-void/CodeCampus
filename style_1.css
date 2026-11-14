@@ -1153,19 +1153,6 @@ white-space: pre; /* for the ampus owrd next line preserve on smaller screens */
     outline-offset: 2px;
 }
 
-/* Force-hides Netlify's injected layout elements */
-div[class*="netlify"], 
-iframe[src*="netlify"],
-#netlify-badge-outer,
-.netlify-badge {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-    height: 0 !important;
-    width: 0 !important;
+a {
+  text-decoration: none;
 }
-
